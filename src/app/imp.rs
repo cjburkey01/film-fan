@@ -1,12 +1,12 @@
-use gtk::builders::MenuButtonBuilder;
-use gtk::gio::{Menu, SimpleAction};
+use gtk::gdk_pixbuf::PixbufLoader;
+use gtk::gio::SimpleAction;
 use gtk::glib::clone;
 use gtk::prelude::*;
 use gtk::subclass::prelude::*;
 use gtk::*;
 
 #[derive(Debug, Default)]
-pub struct FilmFanApp {}
+pub struct FilmFanApp;
 
 #[glib::object_subclass]
 impl ObjectSubclass for FilmFanApp {
@@ -22,19 +22,33 @@ impl ApplicationImpl for FilmFanApp {
 
         // Get the window template
         let window: ApplicationWindow = builder
-            .object("window")
+            .object("main_window")
             .expect("could not get object `window` from builder.");
         window.set_application(Some(application));
+        window.set_default_size(960, 540);
+        window.set_title(Some(&format!(
+            "{} v{}",
+            env!("CARGO_PKG_NAME"),
+            env!("CARGO_PKG_VERSION")
+        )));
 
         // Link callback to new project button
-        let action_new = SimpleAction::new("project.new", None);
+        let action_new = SimpleAction::new("project_new", None);
         action_new.connect_activate(clone!(@weak window => move |_, _| {
             println!("new project");
         }));
         window.add_action(&action_new);
 
+        // Link callback to new project button
+        let action_open = SimpleAction::new("project_open", None);
+        action_open.connect_activate(clone!(@weak window => move |_, _| {
+            println!("open project");
+        }));
+        window.add_action(&action_open);
+
         // Show the window
         window.present();
+        window.grab_focus();
     }
 }
 impl GtkApplicationImpl for FilmFanApp {}
