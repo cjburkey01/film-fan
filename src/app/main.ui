@@ -80,6 +80,37 @@
                         </child>
                     </object>
                 </child>
+                <child>
+                    <object class="GtkBox" id="track_scroll_outer_box">
+                        <property name="halign">start</property>
+                        <property name="orientation">vertical</property>
+                        <property name="spacing">10</property>
+                        <property name="hexpand">yes</property>
+                        <property name="vexpand">yes</property>
+                        <child>
+                            <object class="GtkLabel">
+                                <property name="label">Tracks:</property>
+                            </object>
+                        </child>
+                        <child>
+                            <object class="GtkScrolledWindow" id="track_scroll_window">
+                                <property name="hexpand">yes</property>
+                                <property name="vexpand">yes</property>
+                                <child>
+                                    <object class="GtkBox" id="track_scroll_inner_box">
+                                        <property name="hexpand">yes</property>
+                                        <property name="vexpand">yes</property>
+                                        <child>
+                                            <object class="GtkLabel">
+                                                <property name="label">hello:</property>
+                                            </object>
+                                        </child>
+                                    </object>
+                                </child>
+                            </object>
+                        </child>
+                    </object>
+                </child>
             </object>
         </child>
     </object>
