@@ -54,6 +54,32 @@
                         </child>
                     </object>
                 </child>
+                <child>
+                    <object class="GtkGrid" id="middle_row_grid">
+                        <property name="hexpand">yes</property>
+                        <property name="vexpand">yes</property>
+                        <property name="column_homogeneous">yes</property>
+                        <property name="column_spacing">10</property>
+                        <child>
+                            <object class="GtkBox" id="media_source_box">
+                                <property name="hexpand">yes</property>
+                                <property name="vexpand">yes</property>
+                                <layout>
+                                    <property name="column">0</property>
+                                    <property name="row">0</property>
+                                </layout>
+                            </object>
+                        </child>
+                        <child>
+                            <object class="GtkBox" id="gl_area_box">
+                                <layout>
+                                    <property name="column">1</property>
+                                    <property name="row">0</property>
+                                </layout>
+                            </object>
+                        </child>
+                    </object>
+                </child>
             </object>
         </child>
     </object>
