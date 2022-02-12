@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+    <menu id="file-menu">
+        <item>
+            <attribute name="label" translatable="no">New Project</attribute>
+            <attribute name="action">project.new</attribute>
+        </item>
+        <item>
+            <attribute name="label" translatable="no">Open Project</attribute>
+            <attribute name="action">project.open</attribute>
+        </item>
+    </menu>
+    <object class="GtkApplicationWindow" id="window">
+        <property name="title">Film Fan 0.1.0</property>
+        <child>
+            <object class="GtkBox" id="outer_vertical_box">
+                <property name="orientation">vertical</property>
+                <property name="margin-top">10</property>
+                <property name="margin-bottom">10</property>
+                <property name="margin-start">10</property>
+                <property name="margin-end">10</property>
+                <property name="spacing">10</property>
+                <property name="halign">center</property>
+                <child>
+                    <object class="GtkBox" id="menu_bar_box">
+                        <property name="orientation">vertical</property>
+                        <property name="spacing">10</property>
+                        <property name="halign">center</property>
+                        <child>
+                            <object class="GtkMenuButton">
+                                <property name="menu-model">file-menu</property>
+                            </object>
+                        </child>
+                    </object>
+                </child>
+            </object>
+        </child>
+    </object>
+</interface>
