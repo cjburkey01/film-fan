@@ -1,5 +1,6 @@
 mod app;
 mod render;
+mod timeline;
 
 use app::*;
 use gtk::prelude::*;

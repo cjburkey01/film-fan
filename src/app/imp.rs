@@ -1,6 +1,4 @@
 use crate::render::GliumGLArea;
-use gtk::ffi::{GtkBox, GtkScrolledWindow};
-use gtk::gdk_pixbuf::PixbufLoader;
 use gtk::gio::SimpleAction;
 use gtk::glib::clone;
 use gtk::prelude::*;
